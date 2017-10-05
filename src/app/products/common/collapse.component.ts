@@ -9,7 +9,7 @@ import "rxjs/add/operator/map";
 
 @Component({
   selector: 'collapse-list',
-  templateUrl: './collapse.html'
+  templateUrl: './collapse.component.html'
 })
 export class CollapseComponent implements OnInit{
 
