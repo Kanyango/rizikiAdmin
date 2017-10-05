@@ -10,7 +10,7 @@ export class ProductsComponent implements OnInit{
 
   products: Array<any> = [];
   private headers = new Headers({'Content-Type': 'application/json'});
-  private productsUrl = 'http://127.0.0.1:8300/product';
+  private productsUrl = 'https://rizikisever.herokuapp.com/product';
 
   constructor(public http: Http){}
 
