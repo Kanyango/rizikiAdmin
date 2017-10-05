@@ -11,7 +11,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
 import { NewProductComponent } from './new_product/new_product.component';
-import { CollapseComponent } from './products/common/collapse';
+import { CollapseComponent } from './products/common/collapse.component';
 
 @NgModule({
   declarations: [
