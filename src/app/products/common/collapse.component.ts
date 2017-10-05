@@ -17,7 +17,7 @@ export class CollapseComponent implements OnInit{
   public isCollapsed = false;
   private headers = new Headers({'Content-Type': 'application/json'});
   //private productsUrl = 'http://127.0.0.1:8300/upload';
-  private URL = 'http://127.0.0.1:8300/upload';
+  private URL = ' https://rizikisever.herokuapp.com/upload';
   constructor(public http: Http, private el: ElementRef){}
 
 
