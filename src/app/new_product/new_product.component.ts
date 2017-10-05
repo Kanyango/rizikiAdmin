@@ -2,7 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Variations } from './variations-model';
 import { Headers, Http } from '@angular/http';
-import { FileUploader } from 'ng2-file-upload';
+//import { FileUploader } from 'ng2-file-upload';
 
 import 'rxjs/add/operator/toPromise'
 
