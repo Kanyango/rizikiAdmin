@@ -10,15 +10,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
-import { CollapseComponent } from './products/common/collapse';
 import { NewProductComponent } from './new_product/new_product.component';
+import { CollapseComponent } from './products/common/collapse';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
-    //FileSelectDirective,
-    //FileUploader,
     NewProductComponent,
     CollapseComponent
   ],
@@ -26,6 +24,8 @@ import { NewProductComponent } from './new_product/new_product.component';
     BrowserModule,
     RouterModule,
     HttpModule,
+     //FileSelectDirective,
+    //FileUploader,
     AppRoutingModule,
     ReactiveFormsModule,
     MDBBootstrapModule.forRoot(),
