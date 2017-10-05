@@ -1,11 +1,17 @@
+<!--<button class="btn btn-primary waves-light" type="button" (click)="test.toggle()" mdbRippleRadius>
+    SUB PRODUCTS
+</button> -->
 
-<button class="btn btn-primary waves-light" type="button" (click)="test.toggle()" mdbRippleRadius>
+<button class="btn btn-primary waves-light" type="button" 
+        (click)="isCollapsed = !isCollapsed  mdbRippleRadius
+             [attr.aria-expanded]="!isCollapsed">
     SUB PRODUCTS
 </button>
 
 <br>
 
-<div class="" [collapse]="isCollapsed" #test="bs-collapse" style="height: 180px;">
+<!--<div class="" [collapse]="isCollapsed" #test="bs-collapse" style="height: 180px;" > -->
+  <div id="collapseExample" [ngbCollapse]="isCollapsed" >                                                                                   
     <div *ngFor="let single of one.variations">
       <p> {{ single.name }} </p>
 
