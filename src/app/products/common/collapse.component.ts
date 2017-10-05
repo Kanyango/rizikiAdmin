@@ -14,6 +14,7 @@ import "rxjs/add/operator/map";
 export class CollapseComponent implements OnInit{
 
   @Input() one;
+  public isCollapsed = false;
   private headers = new Headers({'Content-Type': 'application/json'});
   //private productsUrl = 'http://127.0.0.1:8300/upload';
   private URL = 'http://127.0.0.1:8300/upload';
