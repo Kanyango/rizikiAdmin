@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule }   from '@angular/router';
 import { NgModule ,NO_ERRORS_SCHEMA } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-//import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -28,8 +28,8 @@ import { CollapseComponent } from './products/common/collapse.component';
     //FileUploader,
     AppRoutingModule,
     ReactiveFormsModule,
-    MDBBootstrapModule.forRoot()
-    //NgbModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],
