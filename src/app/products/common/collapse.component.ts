@@ -15,6 +15,7 @@ export class CollapseComponent{
 
   @Input() one;
   public isCollapsed = false;
+  uploadUrl = 'https://rizikisever.herokuapp.com/upload/';
   private headers = new Headers({'Content-Type': 'application/json'});
   //private productsUrl = 'http://127.0.0.1:8300/upload';
   //private URL = ' https://rizikisever.herokuapp.com/upload/';
@@ -27,7 +28,9 @@ export class CollapseComponent{
   uploader(id, prodId): FileUploader
   {
     
-    return new FileUploader{{url:'https://rizikisever.herokuapp.com/upload/' + id , itemAlias: 'photo' , prodId: prodId})
+    let URL = `${this.uploadUrl}/${id}`;
+    
+    return new FileUploader{{url: URL , itemAlias: 'photo' , prodId: prodId})
     
   }
   
