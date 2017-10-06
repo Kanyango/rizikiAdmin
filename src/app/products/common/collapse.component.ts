@@ -28,9 +28,9 @@ export class CollapseComponent{
   uploader(id, prodId): FileUploader
   {
     
-    let URL = `${this.uploadUrl}/${id}`;
+    let URL = `${this.uploadUrl}/${id}/${prodId}`;
     
-    return new FileUploader{{url: URL , itemAlias: 'photo' , prodId: prodId})
+    return new FileUploader{{url: URL})
     
   }
   
