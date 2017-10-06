@@ -15,21 +15,49 @@ export class CollapseComponent{
 
   @Input() one;
   public isCollapsed = false;
-  uploadUrl = 'https://rizikisever.herokuapp.com/upload/';
+  filesToUpload: Array<File>;
   private headers = new Headers({'Content-Type': 'application/json'});
-  //private productsUrl = 'http://127.0.0.1:8300/upload';
-  //private URL = ' https://rizikisever.herokuapp.com/upload/';
-  //public uploader:FileUploader = new FileUploader(
-     // {url:'https://rizikisever.herokuapp.com/upload/id', itemAlias: 'photo' , prodId: prodId});
-  
-  constructor(public http: Http, private el: ElementRef){}
+ 
+   constructor(){
+            
+        this.filesToUpload = [ ];
+          }
 
   
-  uploader(id, prodId): FileUploader
+  uploader(id, prodId)
   {
-    let URL = `${this.uploadUrl}/${id}/${prodId}`;
-    return new FileUploader({url: URL}); 
+     let URL = `https://rizikisever.herokuapp.com/upload/${id}/${prodId}`
+     this.makeFileRequest(URL, [], this.filesToUpload).then((result) => {
+            console.log(result);
+        }, (error) => {
+            console.error(error);
+        });
   }
+  
+    fileChangeEvent(fileInput: any){
+        this.filesToUpload = <Array<File>> fileInput.target.files;
+    }
+
+    makeFileRequest(url: string, params: Array<string>, files: Array<File>) {
+        return new Promise((resolve, reject) => {
+            var formData: any = new FormData();
+            var xhr = new XMLHttpRequest();
+            for(var i = 0; i < files.length; i++) {
+                formData.append("uploads[]", files[i], files[i].name);
+            }
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    if (xhr.status == 200) {
+                        resolve(JSON.parse(xhr.response));
+                    } else {
+                        reject(xhr.response);
+                    }
+                }
+            }
+            xhr.open("PUT", url, true);
+            xhr.send(formData);
+        });
+    }
   
 
 
