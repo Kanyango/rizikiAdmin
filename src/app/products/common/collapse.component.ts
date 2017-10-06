@@ -1,7 +1,9 @@
 import { Component, OnInit, Input, ElementRef} from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise'
-import { FileUploader } from 'ng2-file-upload';
+//import { FileUploader } from 'ng2-file-upload';
+import { UploadOutput, UploadInput, UploadFile, humanizeBytes, UploaderOptions } from 'ngx-uploader';
+
 
 import "rxjs/add/operator/do";
 import "rxjs/add/operator/map";
