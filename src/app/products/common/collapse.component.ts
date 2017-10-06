@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef} from '@angular/core';
+import { Component, OnInit, Input, EventEmitter} from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise'
 //import { FileUploader } from 'ng2-file-upload';
@@ -16,8 +16,11 @@ import "rxjs/add/operator/map";
 export class CollapseComponent{
 
   @Input() one;
+  options: UploaderOptions;
+  formData: FormData;
+  files: UploadFile[];
+  uploadInput: EventEmitter<UploadInput>;
   public isCollapsed = false;
-  filesToUpload: Array<File>;
   private headers = new Headers({'Content-Type': 'application/json'});
  
    onUploadOutput(output: UploadOutput, id, prodId): void {
