@@ -24,7 +24,7 @@ export class CollapseComponent{
           }
 
   
-  uploader(id, prodId)
+  upload(id, prodId)
   {
      let URL = `https://rizikisever.herokuapp.com/upload/${id}/${prodId}`
      this.makeFileRequest(URL, [], this.filesToUpload).then((result) => {
