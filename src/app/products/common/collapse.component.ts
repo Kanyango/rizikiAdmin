@@ -28,7 +28,7 @@ export class CollapseComponent{
        url: 'https://rizikisever.herokuapp.com/upload/',
        params: {id : id},
        method: 'PUT',
-       data: { photo: output.file}
+       data: { photo: output.file, prodId: prodId}
        console.log(output.file);
        };
       this.uploadInput.emit(event);
