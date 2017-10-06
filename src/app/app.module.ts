@@ -6,7 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-//import { FileSelectDirective, FileUploader } from 'ng2-file-upload';
+import { FileSelectDirective, FileUploader } from 'ng2-file-upload';
 
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
@@ -24,8 +24,8 @@ import { CollapseComponent } from './products/common/collapse.component';
     BrowserModule,
     RouterModule,
     HttpModule,
-     //FileSelectDirective,
-    //FileUploader,
+    FileSelectDirective,
+    FileUploader,
     AppRoutingModule,
     ReactiveFormsModule,
     MDBBootstrapModule.forRoot(),
