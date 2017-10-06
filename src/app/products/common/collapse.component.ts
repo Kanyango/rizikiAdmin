@@ -20,47 +20,36 @@ export class CollapseComponent{
   filesToUpload: Array<File>;
   private headers = new Headers({'Content-Type': 'application/json'});
  
-   constructor(){
-            
-        this.filesToUpload = [ ];
-          }
-
-  
-  upload(id, prodId)
-  {
-     let URL = `https://rizikisever.herokuapp.com/upload/${id}/${prodId}`
-     this.makeFileRequest(URL, [], this.filesToUpload).then((result) => {
-            console.log(result);
-        }, (error) => {
-            console.error(error);
-        });
+   onUploadOutput(output: UploadOutput, id, prodId): void {
+    if (output.type === 'allAddedToQueue') { // when all files added in queue
+      // uncomment this if you want to auto upload files when added
+       const event: UploadInput = {
+       type: 'uploadAll',
+       url: 'https://rizikisever.herokuapp.com/upload/',
+       params: {id : id},
+       method: 'PUT',
+       data: { photo: output.file}
+       console.log(output.file);
+       };
+      this.uploadInput.emit(event);
+    } else if (output.type === 'addedToQueue'  && typeof output.file !== 'undefined') { // add file to array when added
+      this.files.push(output.file);
+    } else if (output.type === 'uploading' && typeof output.file !== 'undefined') {
+      // update current data in files array for uploading file
+      const index = this.files.findIndex(file => typeof output.file !== 'undefined' && file.id === output.file.id);
+      this.files[index] = output.file;
+    } else if (output.type === 'removed') {
+      // remove file from array when removed
+      this.files = this.files.filter((file: UploadFile) => file !== output.file);
+    } else if (output.type === 'dragOver') {
+      this.dragOver = true;
+    } else if (output.type === 'dragOut') {
+      this.dragOver = false;
+    } else if (output.type === 'drop') {
+      this.dragOver = false;
+    }
   }
   
-    fileChangeEvent(fileInput: any){
-        this.filesToUpload = <Array<File>> fileInput.target.files;
-    }
-
-    makeFileRequest(url: string, params: Array<string>, files: Array<File>) {
-        return new Promise((resolve, reject) => {
-            var formData: any = new FormData();
-            var xhr = new XMLHttpRequest();
-            for(var i = 0; i < files.length; i++) {
-                formData.append("uploads[]", files[i], files[i].name);
-            }
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4) {
-                    if (xhr.status == 200) {
-                        resolve(JSON.parse(xhr.response));
-                    } else {
-                        reject(xhr.response);
-                    }
-                }
-            }
-            xhr.open("PUT", url, true);
-            xhr.send(formData);
-        });
-    }
-  
-
+   
 
 }
