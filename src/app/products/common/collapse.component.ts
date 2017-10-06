@@ -20,10 +20,14 @@ export class CollapseComponent{
   formData: FormData;
   files: UploadFile[];
   uploadInput: EventEmitter<UploadInput>;
+  humanizeBytes: Function;
+  dragOver: boolean;
+  
   public isCollapsed = false;
   private headers = new Headers({'Content-Type': 'application/json'});
  
    onUploadOutput(output: UploadOutput, id, prodId): void {
+     console.log(output.file);
     if (output.type === 'allAddedToQueue') { // when all files added in queue
       // uncomment this if you want to auto upload files when added
        const event: UploadInput = {
@@ -32,7 +36,6 @@ export class CollapseComponent{
        params: {id : id},
        method: 'PUT',
        data: { photo: output.file, prodId: prodId}
-       console.log(output.file);
        };
       this.uploadInput.emit(event);
     } else if (output.type === 'addedToQueue'  && typeof output.file !== 'undefined') { // add file to array when added
