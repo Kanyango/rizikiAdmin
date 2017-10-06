@@ -37,7 +37,8 @@ export class CollapseComponent implements OnInit{
             for (let i = 0; i < fileCount; i++) {
                 formData.append('photo', inputEl.files.item(i));
             }
-            console.log(formData.getAll());
+            let nn = formData.getAll();
+            console.log(nn);
             this.http
                 .put(this.URL, + id , formData).map((res:any) => res).subscribe(
                     (success) => {
