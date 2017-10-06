@@ -15,7 +15,9 @@
     <div *ngFor="let single of one.variations">
       <h4> {{ single.name }} </h4> <h4>{{ single.packsize }}</h4>
 
-      <input type="file" (change)="fileChangeEvent($event)" placeholder="Upload file..." />
-      <button type="button" (click)="upload(one._id, single._id)">Upload</button>
+      <label class="upload-button">
+  <input type="file" ngFileSelect [options]="options" (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput" multiple>
+  or choose file(s)
+</label>
     </div>
 </div>
