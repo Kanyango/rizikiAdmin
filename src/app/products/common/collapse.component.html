@@ -15,8 +15,11 @@
     <div *ngFor="let single of one.variations">
       <h4> {{ single.name }} </h4> <h4>{{ single.packsize }}</h4>
 
-      <input type="file" name="photo" id="photo" />
-      <button type="button" class="btn btn-success waves-light" mdbRippleRadius
-      (click)="upload(single._id)">upload</button>
+      <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
+    <!-- button to trigger the file upload when submitted -->
+    <button type="button" class="btn btn-success btn-s" 
+            (click)="uploader.uploadAll(one._id, single._id)" [disabled]="!uploader.getNotUploadedItems().length">
+        Upload with ng-2 file uploader
+    </button>
     </div>
 </div>
