@@ -34,7 +34,7 @@ export class CollapseComponent{
        type: 'uploadAll',
        url: 'https://rizikisever.herokuapp.com/upload/'+ id,
        method: 'PUT',
-       data: { photo: output.file, prodId: prodId}
+       data: { 'photo': output.file, 'prodId': prodId}
        };
       this.uploadInput.emit(event);
     } else if (output.type === 'addedToQueue'  && typeof output.file !== 'undefined') { // add file to array when added
