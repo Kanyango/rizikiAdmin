@@ -32,9 +32,9 @@ export class CollapseComponent{
       // uncomment this if you want to auto upload files when added
        const event: UploadInput = {
        type: 'uploadAll',
-       url: 'https://rizikisever.herokuapp.com/upload/'+ id,
+       url: 'https://rizikisever.herokuapp.com/upload/ ',
        method: 'PUT',
-       data: { 'photo': output.file, 'prodId': prodId}
+       params: {'id': id}
        };
       this.uploadInput.emit(event);
     } else if (output.type === 'addedToQueue'  && typeof output.file !== 'undefined') { // add file to array when added
