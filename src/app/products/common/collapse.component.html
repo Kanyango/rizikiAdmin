@@ -13,7 +13,7 @@
 <!--<div class="" [collapse]="isCollapsed" #test="bs-collapse" style="height: 180px;" > -->
   <div id="collapseExample" [ngbCollapse]="isCollapsed" >                                                                                   
     <div *ngFor="let single of one.variations">
-      <p> {{ single.name }} </p>
+      <h4> {{ single.name }} </h4> <h4>{{ single.packsize }}</h4>
 
       <input type="file" name="photo" id="photo" />
       <button type="button" class="btn btn-success waves-light" mdbRippleRadius
