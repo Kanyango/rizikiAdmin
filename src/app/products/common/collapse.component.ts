@@ -33,8 +33,8 @@ export class CollapseComponent{
        const event: UploadInput = {
        type: 'uploadAll',
        url: 'https://rizikisever.herokuapp.com/upload/',
-       params: {id : id},
        method: 'PUT',
+       params: {id : id},
        data: { photo: output.file, prodId: prodId}
        };
       this.uploadInput.emit(event);
