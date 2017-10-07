@@ -62,12 +62,14 @@ export class CollapseComponent{
     }
   }
 
-  startUpload(): void {
+  startUpload(id, prodName): void {
+    
+    const URL = `${this.uploadUrl}${id}`;
     const event: UploadInput = {
       type: 'uploadAll',
-      url: 'http://ngx-uploader.com/upload',
-      method: 'POST',
-      data: { foo: 'bar' }
+      url: URL,
+      method: 'PUT',
+      data: { 'prodName': prodName}
     };
 
     this.uploadInput.emit(event);
