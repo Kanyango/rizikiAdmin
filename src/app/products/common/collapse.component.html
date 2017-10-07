@@ -16,10 +16,11 @@
       <h4> {{ single.name }} </h4> <h4>{{ single.packsize }}</h4>
 
       <label class="upload-button">
-  <input type="file" ngFileSelect [options]="options" (uploadOutput)="onUploadOutput($event, one._id, single._id)" [uploadInput]="uploadInput" multiple>
+  <input type="file" ngFileSelect [options]="options" (uploadOutput)="onUploadOutput($event, one._id, single._id)" 
+           [uploadInput]="uploadInput" multiple>
   or choose file(s)
 </label>
-      <button type="button" class="start-upload-btn" (click)="startUpload(one._id, single.packsize)">
+      <button type="button" class="start-upload-btn" (click)="startUpload($event, one._id, single.packsize)">
       Start Upload
     </button>
     </div>
