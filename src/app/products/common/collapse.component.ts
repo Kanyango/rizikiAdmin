@@ -36,7 +36,6 @@ export class CollapseComponent{
        method: 'POST',
        data: { foo: 'bar' }
        };
-      this.uploadInput.emit(event)
       this.uploadInput.emit(event);
     } else if (output.type === 'addedToQueue'  && typeof output.file !== 'undefined') { // add file to array when added
       this.files.push(output.file);
