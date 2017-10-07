@@ -43,7 +43,7 @@ export class CollapseComponent{
        //method: 'PUT',
        //data: { id: id, prodId: prodId }
       // };
-      this.uploadInput.emit(event);
+      //this.uploadInput.emit(event);
     } else if (output.type === 'addedToQueue'  && typeof output.file !== 'undefined') { // add file to array when added
       this.files.push(output.file);
     } else if (output.type === 'uploading' && typeof output.file !== 'undefined') {
