@@ -15,13 +15,13 @@
     <div *ngFor="let single of one.variations">
       <h4> {{ single.name }} </h4> <h4>{{ single.packsize }}</h4>
 
-           <input type="file" 
-             [ng-file-select]="options"
-             (onUpload)="handleUpload($event, one._id, single.packsize)">
+           <label class="upload-button">
+            <input type="file" ngFileSelect [options]="options" (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput" multiple>
+            or choose file(s)
+          </label>
 
-      <div>
-      Response: {{ uploadFile | json }}
-      </div>
-    </div>
+          <button type="button" class="start-upload-btn" (click)="startUpload(one._id, single.packsize)">
+            Start Upload
+          </button>
     
 </div>
