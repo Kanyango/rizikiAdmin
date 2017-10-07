@@ -37,12 +37,11 @@ export class CollapseComponent{
      console.log(output.file);
     if (output.type === 'allAddedToQueue') { // when all files added in queue
        //uncomment this if you want to auto upload files when added
-       const URL = `${this.uploadUrl}${id}`;
-       const event: UploadInput = {
+      const URL = `${this.uploadUrl}${id}`;
+      const event: UploadInput = {
       type: 'uploadAll',
       url: URL,
       method: 'PUT',
-      file: UploadFile,
       data: { 'prodName' : prodId}
     };
     this.uploadInput.emit(event);
