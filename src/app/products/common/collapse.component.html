@@ -19,7 +19,7 @@
   <input type="file" ngFileSelect [options]="options" (uploadOutput)="onUploadOutput($event, one._id, single._id)" [uploadInput]="uploadInput" multiple>
   or choose file(s)
 </label>
-      <button type="button" class="start-upload-btn" (click)="startUpload(one._id, single._id)">
+      <button type="button" class="start-upload-btn" (click)="startUpload(one._id, single.packsize)">
       Start Upload
     </button>
     </div>
