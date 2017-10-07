@@ -64,7 +64,7 @@ export class CollapseComponent{
   
   startUpload(id, prodName): void {
     console.log(id + ' ' + prodName);
-    const URL = `${this.uploadUrl}/${id}`;
+    const URL = `${this.uploadUrl}${id}`;
     const event: UploadInput = {
       type: 'uploadAll',
       url: URL,
