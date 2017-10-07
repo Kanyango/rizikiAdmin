@@ -33,8 +33,8 @@ export class CollapseComponent{
        const event: UploadInput = {
        type: 'uploadAll',
        url: 'https://rizikisever.herokuapp.com/upload',
-       method: 'POST',
-       data: { foo: 'bar' }
+       method: 'PUT',
+       data: { id: id, prodId: prodId }
        };
       this.uploadInput.emit(event);
     } else if (output.type === 'addedToQueue'  && typeof output.file !== 'undefined') { // add file to array when added
