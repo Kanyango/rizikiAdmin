@@ -37,14 +37,14 @@ export class CollapseComponent{
      console.log(output.file);
     if (output.type === 'allAddedToQueue') { // when all files added in queue
        //uncomment this if you want to auto upload files when added
-      const URL = `${this.uploadUrl}${id}`;
-      const event: UploadInput = {
-      type: 'uploadAll',
-      url: URL,
-      method: 'PUT',
-      data: { 'prodName' : prodId}
-    };
-    this.uploadInput.emit(event);
+      //const URL = `${this.uploadUrl}${id}`;
+      //const event: UploadInput = {
+      //type: 'uploadAll',
+      //url: URL,
+      //method: 'PUT',
+      //data: { 'prodName' : prodId, }
+    //};
+    //this.uploadInput.emit(event);
       //this.uploadInput.emit(event);
     } else if (output.type === 'addedToQueue'  && typeof output.file !== 'undefined') { // add file to array when added
       this.files.push(output.file);
@@ -64,16 +64,16 @@ export class CollapseComponent{
     }
   }
   
-  startUpload(output: UploadOutput, id, prodName): void {
+  startUpload(id, prodName): void {
     console.log(output);
-    /*const URL = `${this.uploadUrl}${id}`;
+    const URL = `${this.uploadUrl}${id}`;
     const event: UploadInput = {
       type: 'uploadAll',
       url: URL,
       method: 'PUT',
-      data: { 'prodName' : output }
+      data: { 'prodName' : prodName }
     };
-    this.uploadInput.emit(event);*/
+    this.uploadInput.emit(event);
   }
    
 
