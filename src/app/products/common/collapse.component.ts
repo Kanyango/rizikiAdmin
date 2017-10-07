@@ -70,7 +70,8 @@ export class CollapseComponent{
       method: 'PUT',
       data: { 'prodId' : prodId}
     };
-  
+    this.uploadInput.emit(event);
+  }
    
 
 }
