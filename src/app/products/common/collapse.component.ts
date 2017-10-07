@@ -9,8 +9,7 @@ import "rxjs/add/operator/map";
 
 @Component({
   selector: 'collapse-list',
-  templateUrl: './collapse.component.html',
-  directives: [UPLOAD_DIRECTIVES],
+  templateUrl: './collapse.component.html'
 })
 export class CollapseComponent{
 
