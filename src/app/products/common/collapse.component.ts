@@ -37,12 +37,15 @@ export class CollapseComponent{
      console.log(output.file);
     if (output.type === 'allAddedToQueue') { // when all files added in queue
        //uncomment this if you want to auto upload files when added
-       //const event: UploadInput = {
-       //type: 'uploadAll',
-       //url: 'https://rizikisever.herokuapp.com/upload',
-       //method: 'PUT',
-       //data: { id: id, prodId: prodId }
-      // };
+       const URL = `${this.uploadUrl}${id}`;
+       const event: UploadInput = {
+      type: 'uploadAll',
+      url: URL,
+      method: 'PUT',
+      file: UploadFile,
+      data: { 'prodName' : prodId}
+    };
+    this.uploadInput.emit(event);
       //this.uploadInput.emit(event);
     } else if (output.type === 'addedToQueue'  && typeof output.file !== 'undefined') { // add file to array when added
       this.files.push(output.file);
