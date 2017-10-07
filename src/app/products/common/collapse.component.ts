@@ -36,12 +36,12 @@ export class CollapseComponent{
      console.log(output.file);
     if (output.type === 'allAddedToQueue') { // when all files added in queue
        //uncomment this if you want to auto upload files when added
-       const event: UploadInput = {
-       type: 'uploadAll',
-       url: 'https://rizikisever.herokuapp.com/upload',
-       method: 'PUT',
-       data: { id: id, prodId: prodId }
-       };
+       //const event: UploadInput = {
+       //type: 'uploadAll',
+       //url: 'https://rizikisever.herokuapp.com/upload',
+       //method: 'PUT',
+       //data: { id: id, prodId: prodId }
+      // };
       this.uploadInput.emit(event);
     } else if (output.type === 'addedToQueue'  && typeof output.file !== 'undefined') { // add file to array when added
       this.files.push(output.file);
@@ -60,6 +60,14 @@ export class CollapseComponent{
       this.dragOver = false;
     }
   }
+  
+  startUpload(): void {
+    const event: UploadInput = {
+      type: 'uploadAll',
+      url: 'http://ngx-uploader.com/upload',
+      method: 'POST',
+      data: { foo: 'bar' }
+    };
   
    
 
