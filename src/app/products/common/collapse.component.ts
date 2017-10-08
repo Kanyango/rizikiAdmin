@@ -27,7 +27,7 @@ export class CollapseComponent{
     this.humanizeBytes = humanizeBytes;
   }
   
-  public isCollapsed = false;
+  public isCollapsed = true;
   private headers = new Headers({'Content-Type': 'application/json'});
   private uploadUrl = 'https://rizikisever.herokuapp.com/upload/';
   
