@@ -68,8 +68,7 @@ export class CollapseComponent{
       type: 'uploadAll',
       url: URL,
       method: 'PUT',
-      data: { 'prodName': prodName},
-      response: {'res': res}
+      data: { 'prodName': prodName}
     };
     console.log(response);
     this.uploadInput.emit(event);
