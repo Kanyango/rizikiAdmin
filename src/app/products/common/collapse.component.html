@@ -18,8 +18,8 @@
           
           <h4 class="card-title"> {{ single.name }} </h4> <h4>{{ single.packsize }}</h4>
           
-            <img class="img-fluid" src="{{ single.photo }}" alt="{{single.name}}"/>
-          
+            <img class="img-fluid" src="{{ single.photo }}" alt="{{single.name}}" height="150" width="150"/>
+           
            <label class="upload-button">
             <input type="file" ngFileSelect [options]="options" (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput" multiple>
             or choose file(s)
