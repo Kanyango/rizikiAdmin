@@ -16,7 +16,7 @@ export class CollapseComponent{
   @Input() one;
   options: UploaderOptions;
   formData: FormData;
-  files: UploadInput[];
+  files: UploadFile[];
   uploadInput: EventEmitter<UploadInput>;
   humanizeBytes: Function;
   dragOver: boolean;
