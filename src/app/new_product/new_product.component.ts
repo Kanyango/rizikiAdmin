@@ -56,7 +56,10 @@ export class NewProductComponent implements OnInit {
     return this.http
                .post(this.productsUrl, this.prodform.value, {headers: this.headers})
                .toPromise()
-               .then(res => {console.log(res.json())})
+               .then(res => {
+                             console.log(res.json());  
+                             this.router.navigate(['/products']);
+                  })
                .catch(this.handleError)
   }
 
