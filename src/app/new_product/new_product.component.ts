@@ -18,7 +18,7 @@ export class NewProductComponent implements OnInit {
   private headers = new Headers({'Content-Type': 'application/json'});
   private productsUrl = 'https://rizikisever.herokuapp.com/product';
 
-  constructor(public fb: FormBuilder, private http: Http){}
+  constructor(public fb: FormBuilder, private http: Http, public router: Router){}
 
   ngOnInit()
   {
