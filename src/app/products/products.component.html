@@ -25,7 +25,14 @@
       <div class="list-group" *ngIf="products">
         <li class="list-group-item" *ngFor="let one of products">
         <div>
+           <div>
           <h3>{{ one.brand }}</h3>
+          </div>
+          <div>
+            <button type="button" class="btn btn-danger waves-light" mdbRippleRadius 
+                    (click)="delete(one._id)">Delete Product
+            </button>
+          </div>
         </div>
            <div  *ngIf="products">
 
@@ -33,6 +40,7 @@
              <!--<button type="button" class="btn btn-warning waves-light" mdbRippleRadius>Edit</button>
              <button type="button" class="btn btn-danger waves-light" mdbRippleRadius>delete</button>-->
            </div>
+          
         </li>
 
 
