@@ -25,10 +25,10 @@
       <div class="list-group" *ngIf="products">
         <li class="list-group-item" *ngFor="let one of products">
         <div>
-           <div>
+           <div class="float-left">
           <h3>{{ one.brand }}</h3>
           </div>
-          <div>
+          <div class="float-right"> 
             <button type="button" class="btn btn-danger waves-light" mdbRippleRadius 
                     (click)="delete(one._id)">Delete Product
             </button>
