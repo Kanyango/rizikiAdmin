@@ -39,7 +39,7 @@ export class ProductsComponent implements OnInit{
                   {
                     if(this.products[p]._id === id)
                     {
-                      this.products.splice(p, 1);
+                      this.products.splice(this.products.indexOf(this.products[p]), 1);
                     }
                   }
               })
