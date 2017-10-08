@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, EventEmitter} from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import { UploadOutput, UploadInput, UploadFile, humanizeBytes, UploaderOptions } from 'ngx-uploader';
+import { Router } from '@angular/router';
 import 'rxjs/add/operator/toPromise'
 
 import "rxjs/add/operator/do";
@@ -21,7 +22,7 @@ export class CollapseComponent{
   humanizeBytes: Function;
   dragOver: boolean;
 
-  constructor() {
+  constructor(public router: Router) {
     this.files = []; // local uploading files array
     this.uploadInput = new EventEmitter<UploadInput>(); // input events, we use this to emit data to ngx-uploader
     this.humanizeBytes = humanizeBytes;
@@ -71,6 +72,7 @@ export class CollapseComponent{
       data: { 'prodName': prodName}
     };
     this.uploadInput.emit(event);
+    this.router.navigate(['/products']);
   }
   
   
