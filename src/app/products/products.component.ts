@@ -43,7 +43,7 @@ export class ProductsComponent implements OnInit{
                     }
                   }
               })
-          .catch(this.handleError
+          .catch(this.handleError)
   }
 
 }
