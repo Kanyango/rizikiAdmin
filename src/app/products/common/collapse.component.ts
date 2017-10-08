@@ -64,13 +64,14 @@ export class CollapseComponent{
   startUpload(id, prodName): void {
     
     const URL = `${this.uploadUrl}${id}`;
-    const event: UploadInput = {
+    const event: UploadFile = {
       type: 'uploadAll',
       url: URL,
       method: 'PUT',
-      data: { 'prodName': prodName}
+      data: { 'prodName': prodName},
+      response: {'res': res}
     };
-   
+    console.log(response);
     this.uploadInput.emit(event);
   }
   
