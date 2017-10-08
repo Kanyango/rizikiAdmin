@@ -3,6 +3,10 @@
 <div class="row">
   <div class="col-md-2"></div>
   <div class="col-md-8 card padding" style="padding: 20px;">
+    
+    <div class="card-body">
+      <h4 class="card-title"> New Product Card </h4>
+      <hr>
     <form [formGroup]="prodform" (ngSubmit)="onSubmit()"  novalidate>
       <div class="form-group">
         <label>Brand</label>
@@ -59,5 +63,6 @@
       <br>
       <button type="submit" class="btn btn-success waves-light" mdbRippleRadius>Create</button>
     </form>
+    </div>
   </div>
 </div>
