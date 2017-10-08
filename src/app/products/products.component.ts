@@ -27,5 +27,23 @@ export class ProductsComponent implements OnInit{
   console.error('An error occurred', error); // for demo purposes only
   return Promise.reject(error.message || error);
   }
+  
+  delete(id : any): Promise<any>
+  {
+    const delUrl = `${this.productsUrl}/${id}`;
+     return this.http
+          .delete(delUrl)
+          .toPromise()
+          .then(res => {
+                  for(let p in this.products)
+                  {
+                    if(this.products[p]._id === id)
+                    {
+                      this.products.splice(p, 1);
+                    }
+                  }
+              })
+          .catch(this.handleError
+  }
 
 }
