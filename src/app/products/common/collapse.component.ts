@@ -23,7 +23,7 @@ export class CollapseComponent{
 
   constructor() {
     this.files = []; // local uploading files array
-    this.uploadFile = new EventEmitter<UploadInput>(); // input events, we use this to emit data to ngx-uploader
+    this.uploadInput = new EventEmitter<UploadInput>(); // input events, we use this to emit data to ngx-uploader
     this.humanizeBytes = humanizeBytes;
   }
   
