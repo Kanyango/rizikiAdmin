@@ -13,8 +13,13 @@
 <!--<div class="" [collapse]="isCollapsed" #test="bs-collapse" style="height: 180px;" > -->
   <div id="collapseExample" [ngbCollapse]="isCollapsed" >                                                                                   
     <div *ngFor="let single of one.variations">
-      <h4> {{ single.name }} </h4> <h4>{{ single.packsize }}</h4>
-
+      <div class="card">
+        <div class="card-body">
+          
+          <h4 class="card-title"> {{ single.name }} </h4> <h4>{{ single.packsize }}</h4>
+          
+            <img class="img-fluid" src="{{ single.photo }}" alt="{{single.name}}"/>
+          
            <label class="upload-button">
             <input type="file" ngFileSelect [options]="options" (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput" multiple>
             or choose file(s)
@@ -23,5 +28,7 @@
           <button type="button" class="start-upload-btn" (click)="startUpload(one._id, single.packsize)">
             Start Upload
           </button>
+        </div>
+      </div>
     
 </div>
