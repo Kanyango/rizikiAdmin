@@ -16,7 +16,7 @@ export class NewProductComponent implements OnInit {
 
   prodform: FormGroup;
   private headers = new Headers({'Content-Type': 'application/json'});
-  private productsUrl = 'https://rizikisever.herokuapp.com/product';
+  private productsUrl = 'https://rizikiserver.herokuapp.com/product';
 
   constructor(public fb: FormBuilder, private http: Http, public router: Router){}
 
