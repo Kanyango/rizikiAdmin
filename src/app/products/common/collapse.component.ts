@@ -30,7 +30,7 @@ export class CollapseComponent{
   
   public isCollapsed = true;
   private headers = new Headers({'Content-Type': 'application/json'});
-  private uploadUrl = 'https://rizikisever.herokuapp.com/upload/';
+  private uploadUrl = 'https://rizikiserver.herokuapp.com/upload/';
   
   
 
