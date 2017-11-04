@@ -27,6 +27,7 @@ export class NewProductComponent implements OnInit {
 
             brand: ['', Validators.required],
             category: ['',Validators.required],
+            distribtor: ['',Validators.required],
             variations: this.fb.array([])
     })
   }
